@@ -1,0 +1,3 @@
+Time [s], Analyzer Name, Decoded Protocol Result
+0.577993500000000,I2C,Setup Write to ['184'] + NAK
+0.583792500000000,I2C,Setup Write to ['184'] + NAK

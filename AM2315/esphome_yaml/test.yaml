@@ -1,0 +1,20 @@
+esphome:
+  name: test_device
+  platform: ESP8266
+  board: nodemcuv2
+
+logger:
+  level: verbose
+
+i2c:
+    sda: D2
+    scl: D1
+    scan: False
+
+sensor:
+  - platform: am2320
+    temperature:
+      name: "Temperature"
+    humidity:
+      name: "Humidity"
+    update_interval: 5s

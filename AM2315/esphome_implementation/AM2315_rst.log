@@ -1,0 +1,60 @@
+reset via rst button
+
+
+[11:27:04][I][logger:166]: Log initialized
+[11:27:04][I][app:029]: Running through setup()...
+[11:27:04][V][app:030]: Sorting components by setup priority...
+[11:27:04][C][am2320:052]: Setting up AM2320...
+[11:27:04][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:27:04][I][app:059]: setup() finished successfully!
+[11:27:04][W][i2c:073]: Received NACK on transmit of data for address 0x5C
+[11:27:04][W][am2320:074]: Writing bytes for AM2320 failed!
+[11:27:04][W][am2320:089]: Updating AM2320 failed!
+[11:27:04][I][app:105]: ESPHome version 1.16.0-dev compiled on Jul 27 2020, 11:22:15
+[11:27:04][C][i2c:028]: I2C Bus:
+[11:27:04][C][i2c:029]:   SDA Pin: GPIO4
+[11:27:04][C][i2c:030]:   SCL Pin: GPIO5
+[11:27:04][C][i2c:031]:   Frequency: 50000 Hz
+[11:27:04][C][logger:185]: Logger:
+[11:27:04][C][logger:186]:   Level: VERBOSE
+[11:27:04][C][logger:187]:   Log Baud Rate: 115200
+[11:27:04][C][logger:188]:   Hardware UART: UART0
+[11:27:04][D][am2320:062]: AM2320:
+[11:27:04][C][am2320:063]:   Address: 0x5C
+[11:27:04][C][am2320:067]:   Temperature 'Temperature'
+[11:27:04][C][am2320:067]:     Unit of Measurement: '°C'
+[11:27:04][C][am2320:067]:     Accuracy Decimals: 1
+[11:27:04][C][am2320:067]:     Icon: 'mdi:thermometer'
+[11:27:04][C][am2320:068]:   Humidity 'Humidity'
+[11:27:04][C][am2320:068]:     Unit of Measurement: '%'
+[11:27:04][C][am2320:068]:     Accuracy Decimals: 1
+[11:27:04][C][am2320:068]:     Icon: 'mdi:water-percent'
+[11:27:07][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:27:07][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:27:07][W][am2320:074]: Writing bytes for AM2320 failed!
+[11:27:07][W][am2320:089]: Updating AM2320 failed!
+[11:27:12][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:27:12][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:27:12][W][am2320:074]: Writing bytes for AM2320 failed!
+[11:27:12][W][am2320:089]: Updating AM2320 failed!
+[11:27:16]wifi evt: 7
+[11:27:17]wifi evt: 7
+[11:27:17]wifi evt: 7
+[11:27:17]wifi evt: 7
+[11:27:17][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:27:17][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:27:17][W][am2320:074]: Writing bytes for AM2320 failed!
+[11:27:17][W][am2320:089]: Updating AM2320 failed!
+[11:27:22][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:27:22][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:27:22][W][am2320:074]: Writing bytes for AM2320 failed!
+[11:27:22][W][am2320:089]: Updating AM2320 failed!
+[11:27:27][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:27:27][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:27:27][W][am2320:074]: Writing bytes for AM2320 failed!
+[11:27:27][W][am2320:089]: Updating AM2320 failed!
+[11:27:32][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:27:32][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:27:32][W][am2320:074]: Writing bytes for AM2320 failed!
+[11:27:32][W][am2320:089]: Updating AM2320 failed!
+

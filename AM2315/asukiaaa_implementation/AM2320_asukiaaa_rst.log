@@ -1,0 +1,43 @@
+[11:44:18][I][logger:166]: Log initialized
+[11:44:18][I][app:029]: Running through setup()...
+[11:44:18][V][app:030]: Sorting components by setup priority...
+[11:44:18][I][app:059]: setup() finished successfully!
+[11:44:18][V][sensor:013]: 'Temperature': Received new state 24.200001
+[11:44:18][D][sensor:092]: 'Temperature': Sending state 24.20000 °C with 1 decimals of accuracy
+[11:44:18][V][sensor:013]: 'Humidity': Received new state 59.700001
+[11:44:18][D][sensor:092]: 'Humidity': Sending state 59.70000 % with 1 decimals of accuracy
+[11:44:18][I][app:105]: ESPHome version 1.16.0-dev compiled on Jul 27 2020, 11:42:23
+[11:44:18][C][i2c:028]: I2C Bus:
+[11:44:18][C][i2c:029]:   SDA Pin: GPIO4
+[11:44:18][C][i2c:030]:   SCL Pin: GPIO5
+[11:44:18][C][i2c:031]:   Frequency: 50000 Hz
+[11:44:18][C][logger:185]: Logger:
+[11:44:18][C][logger:186]:   Level: VERBOSE
+[11:44:18][C][logger:187]:   Log Baud Rate: 115200
+[11:44:18][C][logger:188]:   Hardware UART: UART0
+[11:44:21][V][sensor:013]: 'Temperature': Received new state 24.200001
+[11:44:21][D][sensor:092]: 'Temperature': Sending state 24.20000 °C with 1 decimals of accuracy
+[11:44:21][V][sensor:013]: 'Humidity': Received new state 59.799999
+[11:44:21][D][sensor:092]: 'Humidity': Sending state 59.80000 % with 1 decimals of accuracy
+[11:44:26]ture': Received new state 24.200001
+[11:44:26][D][sensor:092]: 'Temperature': Sending state 24.20000 °C with 1 decimals of accuracy
+[11:44:26][V][sensor:013]: 'Humidity': Received new state 59.799999
+[11:44:26][D][sensor:092]: 'Humidity': Sending state 59.80000 % with 1 decimals of accuracy
+[11:44:31][V][sensor:013]: 'Temperature': Received new state 24.200001
+[11:44:31][D][sensor:092]: 'Temperature': Sending state 24.20000 °C with 1 decimals of accuracy
+[11:44:31][V][sensor:013]: 'Humidity': Received new state 59.700001
+[11:44:31][D][sensor:092]: 'Humidity': Sending state 59.70000 % with 1 decimals of accuracy
+[11:44:32]wifi evt: 7
+[11:44:32]wifi evt: 7
+[11:44:32]wifi evt: 7
+[11:44:36][V][sensor:013]: 'Temperature': Received new state 24.200001
+[11:44:36][D][sensor:092]: 'Temperature': Sending state 24.20000 °C with 1 decimals of accuracy
+[11:44:36][V][sensor:013]: 'Humidity': Received new state 59.599998
+[11:44:36][D][sensor:092]: 'Humidity': Sending state 59.60000 % with 1 decimals of accuracy
+[11:44:41][V][sensor:013]: 'Temperature': Received new state 24.299999
+[11:44:41][D][sensor:092]: 'Temperature': Sending state 24.30000 °C with 1 decimals of accuracy
+[11:44:41][V][sensor:013]: 'Humidity': Received new state 59.400002
+[11:44:41][D][sensor:092]: 'Humidity': Sending state 59.40000 % with 1 decimals of accuracy
+
+
+

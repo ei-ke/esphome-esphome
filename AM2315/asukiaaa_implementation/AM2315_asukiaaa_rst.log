@@ -1,0 +1,35 @@
+[11:48:24][I][logger:166]: Log initialized
+[11:48:24][I][app:029]: Running through setup()...
+[11:48:24][V][app:030]: Sorting components by setup priority...
+[11:48:24][I][app:059]: setup() finished successfully!
+[11:48:24][V][sensor:013]: 'Temperature': Received new state 27.700001
+[11:48:24][D][sensor:092]: 'Temperature': Sending state 27.70000 °C with 1 decimals of accuracy
+[11:48:24][V][sensor:013]: 'Humidity': Received new state 53.000000
+[11:48:24][D][sensor:092]: 'Humidity': Sending state 53.00000 % with 1 decimals of accuracy
+[11:48:24][I][app:105]: ESPHome version 1.16.0-dev compiled on Jul 27 2020, 11:42:23
+[11:48:24][C][i2c:028]: I2C Bus:
+[11:48:24][C][i2c:029]:   SDA Pin: GPIO4
+[11:48:24][C][i2c:030]:   SCL Pin: GPIO5
+[11:48:24][C][i2c:031]:   Frequency: 50000 Hz
+[11:48:24][C][logger:185]: Logger:
+[11:48:24][C][logger:186]:   Level: VERBOSE
+[11:48:24][C][logger:187]:   Log Baud Rate: 115200
+[11:48:24][C][logger:188]:   Hardware UART: UART0
+[11:48:25]wifi evt: 7
+[11:48:25]wifi evt: 7
+[11:48:25]wifi evt: 7
+[11:48:27][V][sensor:013]: 'Temperature': Received new state 27.700001
+[11:48:27][D][sensor:092]: 'Temperature': Sending state 27.70000 °C with 1 decimals of accuracy
+[11:48:27][V][sensor:013]: 'Humidity': Received new state 53.299999
+[11:48:27][D][sensor:092]: 'Humidity': Sending state 53.30000 % with 1 decimals of accuracy
+[11:48:32][V][sensor:013]: 'Temperature': Received new state 27.700001
+[11:48:32][D][sensor:092]: 'Temperature': Sending state 27.70000 °C with 1 decimals of accuracy
+[11:48:32][V][sensor:013]: 'Humidity': Received new state 53.799999
+[11:48:32][D][sensor:092]: 'Humidity': Sending state 53.80000 % with 1 decimals of accuracy
+[11:48:37][V][sensor:013]: 'Temperature': Received new state 27.700001
+[11:48:37][D][sensor:092]: 'Temperature': Sending state 27.70000 °C with 1 decimals of accuracy
+[11:48:37][V][sensor:013]: 'Humidity': Received new state 53.900002
+[11:48:37][D][sensor:092]: 'Humidity': Sending state 53.90000 % with 1 decimals of accuracy
+
+
+

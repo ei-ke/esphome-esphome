@@ -1,0 +1,49 @@
+unplugged AM2320 an plugged in AM2320 while the board was live
+
+
+[11:25:10][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:25:10][D][am2320:044]: Got temperature=25.6°C humidity=56.3%
+[11:25:10][V][sensor:013]: 'Temperature': Received new state 25.600000
+[11:25:10][D][sensor:092]: 'Temperature': Sending state 25.60000 °C with 1 decimals of accuracy
+[11:25:10][V][sensor:013]: 'Humidity': Received new state 56.299999
+[11:25:10][D][sensor:092]: 'Humidity': Sending state 56.30000 % with 1 decimals of accuracy
+[11:25:10]wifi evt: 7
+[11:25:10]wifi evt: 7
+[11:25:10]wifi evt: 7
+[11:25:15][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:25:15][D][am2320:044]: Got temperature=25.6°C humidity=56.3%
+[11:25:15][V][sensor:013]: 'Temperature': Received new state 25.600000
+[11:25:15][D][sensor:092]: 'Temperature': Sending state 25.60000 °C with 1 decimals of accuracy
+[11:25:15][V][sensor:013]: 'Humidity': Received new state 56.299999
+[11:25:15][D][sensor:092]: 'Humidity': Sending state 56.30000 % with 1 decimals of accuracy
+[11:25:20][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:25:20][D][am2320:044]: Got temperature=25.6°C humidity=56.3%
+[11:25:20][V][sensor:013]: 'Temperature': Received new state 25.600000
+[11:25:20][D][sensor:092]: 'Temperature': Sending state 25.60000 °C with 1 decimals of accuracy
+[11:25:20][V][sensor:013]: 'Humidity': Received new state 56.299999
+[11:25:20][D][sensor:092]: 'Humidity': Sending state 56.30000 % with 1 decimals of accuracy
+[11:25:25][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:25:25][D][am2320:044]: Got temperature=25.6°C humidity=56.3%
+[11:25:25][V][sensor:013]: 'Temperature': Received new state 25.600000
+[11:25:25][D][sensor:092]: 'Temperature': Sending state 25.60000 °C with 1 decimals of accuracy
+[11:25:25][V][sensor:013]: 'Humidity': Received new state 56.299999
+[11:25:25][D][sensor:092]: 'Humidity': Sending state 56.30000 % with 1 decimals of accuracy
+[11:25:30][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:25:30][D][am2320:044]: Got temperature=25.6°C humidity=56.2%
+[11:25:30][V][sensor:013]: 'Temperature': Received new state 25.600000
+[11:25:30][D][sensor:092]: 'Temperature': Sending state 25.60000 °C with 1 decimals of accuracy
+[11:25:30][V][sensor:013]: 'Humidity': Received new state 56.200001
+[11:25:30][D][sensor:092]: 'Humidity': Sending state 56.20000 % with 1 decimals of accuracy
+[11:25:31]wifi evt: 7
+[11:25:31]wifi evt: 7
+[11:25:31]wifi evt: 7
+[11:25:31]wifi evt: 7
+[11:25:35][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:25:35][D][am2320:044]: Got temperature=25.6°C humidity=56.2%
+[11:25:35][V][sensor:013]: 'Temperature': Received new state 25.600000
+[11:25:35][D][sensor:092]: 'Temperature': Sending state 25.60000 °C with 1 decimals of accuracy
+[11:25:35][V][sensor:013]: 'Humidity': Received new state 56.200001
+[11:25:35][D][sensor:092]: 'Humidity': Sending state 56.20000 % with 1 decimals of accuracy
+
+
+
