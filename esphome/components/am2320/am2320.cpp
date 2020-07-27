@@ -30,8 +30,9 @@ uint16_t crc_16(uint8_t *ptr, uint8_t length) {
 
 void AM2320Component::update() {
   uint8_t data[8];
-  data[0] = 0;
-  data[1] = 4;
+  data[0] = 3;
+  data[1] = 0;
+  data[2] = 4;
   if (!this->read_data_(data)) {
     this->status_set_warning();
     return;
