@@ -51,8 +51,8 @@ void AM2320Component::update() {
 }
 void AM2320Component::setup() {
   ESP_LOGCONFIG(TAG, "Setting up AM2320...");
-  uint8_t data[0];
-  this->read_data_(data);
+  this->parent_->raw_begin_transmission(this->address_);
+  this->parent_->raw_end_transmission(this->address_);
 }
 void AM2320Component::dump_config() {
   ESP_LOGD(TAG, "AM2320:");
@@ -78,8 +78,8 @@ bool AM2320Component::read_bytes_(uint8_t a_register, uint8_t *data, uint8_t len
 
 bool AM2320Component::read_data_(uint8_t *data) {
   // Wake up
-  uint8_t wakeup_data[0];
-  this->write_bytes(0, wakeup_data, 0);
+  this->parent_->raw_begin_transmission(this->address_);
+  this->parent_->raw_end_transmission(this->address_);
 
   // Write instruction 3, 2 bytes, get 8 bytes back (2 preamble, 2 bytes temperature, 2 bytes humidity, 2 bytes CRC)
   if (!this->read_bytes_(3, data, 8, 2)) {
