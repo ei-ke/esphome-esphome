@@ -53,6 +53,7 @@ void AM2320Component::setup() {
   uint8_t data[8];
   data[0] = 0;
   data[1] = 4;
+  this->read_data_(data);
   if (!this->read_data_(data)) {
     this->mark_failed();
     return;
