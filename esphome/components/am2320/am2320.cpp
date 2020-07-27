@@ -83,7 +83,8 @@ bool AM2320Component::read_bytes_(uint8_t a_register, uint8_t *data, uint8_t len
 
 bool AM2320Component::read_data_(uint8_t *data) {
   // Wake up
-  this->write_bytes(0, data, 0);
+  uint8_t wakeup_data[0];
+  this->write_bytes(0, wakeup_data, 0);
 
   // Write instruction 3, 2 bytes, get 8 bytes back (2 preamble, 2 bytes temperature, 2 bytes humidity, 2 bytes CRC)
   if (!this->read_bytes_(3, data, 8, 2)) {
