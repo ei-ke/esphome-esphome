@@ -51,9 +51,7 @@ void AM2320Component::update() {
 }
 void AM2320Component::setup() {
   ESP_LOGCONFIG(TAG, "Setting up AM2320...");
-  uint8_t data[8];
-  data[0] = 0;
-  data[1] = 4;
+  uint8_t data[0];
   this->read_data_(data);
 }
 void AM2320Component::dump_config() {
