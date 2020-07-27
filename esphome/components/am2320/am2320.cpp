@@ -81,7 +81,7 @@ bool AM2320Component::read_data_(uint8_t *data) {
   // Wake up
   this->parent_->raw_begin_transmission(this->address_);
   this->parent_->raw_end_transmission(this->address_);
-
+  delay(2);
   // Write instruction 3, 2 bytes, get 8 bytes back (2 preamble, 2 bytes temperature, 2 bytes humidity, 2 bytes CRC)
   if (!this->read_bytes_(3, data, 8, 2)) {
     ESP_LOGW(TAG, "Updating AM2320 failed!");
