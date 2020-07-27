@@ -54,10 +54,6 @@ void AM2320Component::setup() {
   data[0] = 0;
   data[1] = 4;
   this->read_data_(data);
-  if (!this->read_data_(data)) {
-    this->mark_failed();
-    return;
-  }
 }
 void AM2320Component::dump_config() {
   ESP_LOGD(TAG, "AM2320:");
