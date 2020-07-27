@@ -30,9 +30,8 @@ uint16_t crc_16(uint8_t *ptr, uint8_t length) {
 
 void AM2320Component::update() {
   uint8_t data[8];
-  data[0] = 3;
-  data[1] = 0;
-  data[2] = 4;
+  data[0] = 0;
+  data[1] = 4;
   if (!this->read_data_(data)) {
     this->status_set_warning();
     return;
@@ -52,7 +51,7 @@ void AM2320Component::update() {
 void AM2320Component::setup() {
   ESP_LOGCONFIG(TAG, "Setting up AM2320...");
   this->parent_->raw_begin_transmission(this->address_);
-  this->parent_->raw_end_transmission(0x00);
+  this->parent_->raw_end_transmission(this->address_);
   delay(10);
 }
 void AM2320Component::dump_config() {
@@ -83,7 +82,7 @@ bool AM2320Component::read_data_(uint8_t *data) {
   this->parent_->raw_end_transmission(this->address_);
   delay(2);
   // Write instruction 3, 2 bytes, get 8 bytes back (2 preamble, 2 bytes temperature, 2 bytes humidity, 2 bytes CRC)
-  if (!this->read_bytes_(3, data, 8, 2)) {
+  if (!this->read_bytes_(3, data, 8, 20)) {
     ESP_LOGW(TAG, "Updating AM2320 failed!");
     return false;
   }
