@@ -52,7 +52,7 @@ void AM2320Component::update() {
 void AM2320Component::setup() {
   ESP_LOGCONFIG(TAG, "Setting up AM2320...");
   this->parent_->raw_begin_transmission(this->address_);
-  this->parent_->raw_end_transmission(this->address_);
+  this->parent_->raw_end_transmission(0x00);
   delay(10);
 }
 void AM2320Component::dump_config() {
