@@ -50,10 +50,13 @@ void AM2320Component::update() {
 }
 void AM2320Component::setup() {
   ESP_LOGCONFIG(TAG, "Setting up AM2320...");
+  delay(1000);
   this->parent_->raw_begin_transmission(this->address_);
+  delay(20);
   this->parent_->raw_end_transmission(this->address_);
-  delay(10);
+  delay(20);
 }
+
 void AM2320Component::dump_config() {
   ESP_LOGD(TAG, "AM2320:");
   LOG_I2C_DEVICE(this);
@@ -78,11 +81,10 @@ bool AM2320Component::read_bytes_(uint8_t a_register, uint8_t *data, uint8_t len
 
 bool AM2320Component::read_data_(uint8_t *data) {
   // Wake up
-  this->parent_->raw_begin_transmission(this->address_);
-  this->parent_->raw_end_transmission(this->address_);
-  delay(2);
+  this->write_bytes(0, data, 0);
+
   // Write instruction 3, 2 bytes, get 8 bytes back (2 preamble, 2 bytes temperature, 2 bytes humidity, 2 bytes CRC)
-  if (!this->read_bytes_(3, data, 8, 20)) {
+  if (!this->read_bytes_(3, data, 8, 2)) {
     ESP_LOGW(TAG, "Updating AM2320 failed!");
     return false;
   }
