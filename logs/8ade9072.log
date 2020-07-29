@@ -1,0 +1,66 @@
+[11:01:45][I][logger:166]: Log initialized
+[11:01:45][I][app:029]: Running through setup()...
+[11:01:45][V][app:030]: Sorting components by setup priority...
+[11:01:45][C][am2320:077]: Setting up AM2320...
+[11:01:45][I][app:059]: setup() finished successfully!
+[11:01:47][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:01:47][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:47][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:47][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:47][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:47][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:47][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:47][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:47][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:47][D][am2320:072]: Got temperature=0.0°C humidity=0.0%
+[11:01:47][V][sensor:013]: 'Temperature': Received new state 0.000000
+[11:01:47][D][sensor:092]: 'Temperature': Sending state 0.00000 °C with 1 decimals of accuracy
+[11:01:47][V][sensor:013]: 'Humidity': Received new state 0.000000
+[11:01:47][D][sensor:092]: 'Humidity': Sending state 0.00000 % with 1 decimals of accuracy
+[11:01:47][V][app:081]: A component took a long time in a loop() cycle (2.08 s).
+[11:01:47][V][app:082]: Components should block for at most 20-30ms in loop().
+[11:01:47][I][app:105]: ESPHome version 1.16.0-dev compiled on Jul 29 2020, 10:26:23
+[11:01:47][C][i2c:028]: I2C Bus:
+[11:01:47][C][i2c:029]:   SDA Pin: GPIO4
+[11:01:47][C][i2c:030]:   SCL Pin: GPIO5
+[11:01:47][C][i2c:031]:   Frequency: 50000 Hz
+[11:01:47][C][logger:185]: Logger:
+[11:01:47][C][logger:186]:   Level: VERBOSE
+[11:01:47][C][logger:187]:   Log Baud Rate: 115200
+[11:01:47][C][logger:188]:   Hardware UART: UART0
+[11:01:51][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:01:51][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:51][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:51][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:51][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:51][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:51][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:51][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:51][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:51][D][am2320:072]: Got temperature=0.0°C humidity=0.0%
+[11:01:51][V][sensor:013]: 'Temperature': Received new state 0.000000
+[11:01:51][D][sensor:092]: 'Temperature': Sending state 0.00000 °C with 1 decimals of accuracy
+[11:01:51][V][sensor:013]: 'Humidity': Received new state 0.000000
+[11:01:51][D][sensor:092]: 'Humidity': Sending state 0.00000 % with 1 decimals of accuracy
+[11:01:51][V][app:081]: A component took a long time in a loop() cycle (2.08 s).
+[11:01:51][V][app:082]: Components should block for at most 20-30ms in loop().
+[11:01:53]wifi evt: 7
+[11:01:53]wifi evt: 7
+[11:01:53]wifi evt: 7
+[11:01:56][W][i2c:070]: Received NACK on transmit of address 0x5C
+[11:01:56][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:56][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:56][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:56][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:56][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:56][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:56][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:56][W][i2c:086]: Requesting 1 bytes from 0x5C failed!
+[11:01:56][D][am2320:072]: Got temperature=0.0°C humidity=0.0%
+[11:01:56][V][sensor:013]: 'Temperature': Received new state 0.000000
+[11:01:56][D][sensor:092]: 'Temperature': Sending state 0.00000 °C with 1 decimals of accuracy
+[11:01:56][V][sensor:013]: 'Humidity': Received new state 0.000000
+[11:01:56][D][sensor:092]: 'Humidity': Sending state 0.00000 % with 1 decimals of accuracy
+[11:01:56][V][app:081]: A component took a long time in a loop() cycle (2.08 s).
+[11:01:56][V][app:082]: Components should block for at most 20-30ms in loop().
+

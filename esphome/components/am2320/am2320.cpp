@@ -38,7 +38,7 @@ static const int buffLen = 8;
 
   // Wakeup sensor
   this->parent_->raw_begin_transmission(this->address_);
-  //this->parent_->raw_end_transmission(this->address_);
+  this->parent_->raw_end_transmission(this->address_);
   delay(10);
   uint8_t data1[1] = {0x03};
   uint8_t data2[1] = {0x00};
@@ -48,8 +48,8 @@ static const int buffLen = 8;
   this->parent_->raw_write(this->address_, data1, leng);
   this->parent_->raw_write(this->address_, data2, leng);
   this->parent_->raw_write(this->address_, data3, leng);
-
   int result = this->parent_->raw_end_transmission(this->address_);
+  this->parent_->raw_begin_transmission(this->address_);
   delay(2); // >1.5ms
   for (uint8_t i = 0; i < buffLen; ++i) {
     buf[i] = this->parent_->raw_request_from(this->address_, leng);
