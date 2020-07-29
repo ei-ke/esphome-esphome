@@ -51,7 +51,10 @@ static const int buffLen = 8;
 
   int result = this->parent_->raw_end_transmission(this->address_);
   delay(2); // >1.5ms
-  this->parent_->raw_receive(this->address_, buf, buffLen);
+  for (uint8_t i = 0; i < buffLen; ++i) {
+    buf[i] = this->parent_->raw_request_from(this->address_, leng);
+  }
+
 
   // Fusion Code check
 
