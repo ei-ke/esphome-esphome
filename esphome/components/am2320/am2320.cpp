@@ -11,74 +11,97 @@ namespace am2320 {
 
 static const char *TAG = "am2320";
 
-float temperatureC;
-float humidity;
-float temperatureF;
-
-uint16_t CRC16(uint8_t *ptr, uint8_t length) {
+// ---=== Calc CRC16 ===---
+uint16_t crc_16(uint8_t *ptr, uint8_t length) {
   uint16_t crc = 0xFFFF;
-  uint8_t s = 0x00;
-
-  while(length--) {
+  uint8_t i;
+  //------------------------------
+  while (length--) {
     crc ^= *ptr++;
-    for(s = 0; s < 8; s++) {
-      if((crc & 0x01) != 0) {
+    for (i = 0; i < 8; i++)
+      if ((crc & 0x01) != 0) {
         crc >>= 1;
         crc ^= 0xA001;
-      } else crc >>= 1;
-    }
+      } else
+        crc >>= 1;
   }
   return crc;
 }
 
 void AM2320Component::update() {
-  delay(2000);
-static const int buffLen = 8;
-  uint8_t buf[buffLen];
-
-  // Wakeup sensor
-  this->parent_->raw_begin_transmission(this->address_);
-  this->parent_->raw_end_transmission(this->address_);
-  delay(10);
-  uint8_t data1[1] = {0x03};
-  uint8_t data2[1] = {0x00};
-  uint8_t data3[1] = {0x04};
-  int leng = 1;
-  this->parent_->raw_begin_transmission(this->address_);
-  this->parent_->raw_write(this->address_, data1, leng);
-  this->parent_->raw_write(this->address_, data2, leng);
-  this->parent_->raw_write(this->address_, data3, leng);
-  int result = this->parent_->raw_end_transmission(this->address_);
-  this->parent_->raw_begin_transmission(this->address_);
-  delay(2); // >1.5ms
-  for (uint8_t i = 0; i < buffLen; ++i) {
-    buf[i] = this->parent_->raw_request_from(this->address_, leng);
+  uint8_t data[8];
+  data[0] = 0;
+  data[1] = 4;
+  if (!this->read_data_(data)) {
+    this->status_set_warning();
+    return;
   }
 
+  float temperature = (((data[4] & 0x7F) << 8) + data[5]) / 10.0;
+  temperature = (data[4] & 0x80) ? -temperature : temperature;
+  float humidity = ((data[2] << 8) + data[3]) / 10.0;
 
-  // Fusion Code check
-
-  // CRC check
-
-
-  uint16_t t = (((uint16_t) buf[4] & 0x7F) << 8) | buf[5];
-  temperatureC = t / 10.0;
-  temperatureC = ((buf[4] & 0x80) >> 7) == 1 ? temperatureC * (-1) : temperatureC;
-  temperatureF = temperatureC * 9 / 5 + 32;
-
-  uint16_t h = ((uint16_t) buf[2] << 8) | buf[3];
-  humidity = h / 10.0;
-
-  ESP_LOGD(TAG, "Got temperature=%.1f°C humidity=%.1f%%", temperatureC, humidity);
-  this->temperature_sensor_->publish_state(temperatureC);
-  this->humidity_sensor_->publish_state(humidity);
+  ESP_LOGD(TAG, "Got temperature=%.1f°C humidity=%.1f%%", temperature, humidity);
+  if (this->temperature_sensor_ != nullptr)
+    this->temperature_sensor_->publish_state(temperature);
+  if (this->humidity_sensor_ != nullptr)
+    this->humidity_sensor_->publish_state(humidity);
+  this->status_clear_warning();
 }
 void AM2320Component::setup() {
   ESP_LOGCONFIG(TAG, "Setting up AM2320...");
+  uint8_t data[8];
+  data[0] = 0;
+  data[1] = 4;
+  if (!this->read_data_(data)) {
+    this->mark_failed();
+    return;
+  }
 }
-
+void AM2320Component::dump_config() {
+  ESP_LOGD(TAG, "AM2320:");
+  LOG_I2C_DEVICE(this);
+  if (this->is_failed()) {
+    ESP_LOGE(TAG, "Communication with AM2320 failed!");
+  }
+  LOG_SENSOR("  ", "Temperature", this->temperature_sensor_);
+  LOG_SENSOR("  ", "Humidity", this->humidity_sensor_);
+}
 float AM2320Component::get_setup_priority() const { return setup_priority::DATA; }
 
+bool AM2320Component::read_bytes_(uint8_t a_register, uint8_t *data, uint8_t len, uint32_t conversion) {
+  if (!this->write_bytes(a_register, data, 2)) {
+    ESP_LOGW(TAG, "Writing bytes for AM2320 failed!");
+    return false;
+  }
+
+  if (conversion > 0)
+    delay(conversion);
+  return this->parent_->raw_receive(this->address_, data, len);
+}
+
+bool AM2320Component::read_data_(uint8_t *data) {
+  // Wake up
+  this->write_bytes(0, data, 0);
+
+  // Write instruction 3, 2 bytes, get 8 bytes back (2 preamble, 2 bytes temperature, 2 bytes humidity, 2 bytes CRC)
+  if (!this->read_bytes_(3, data, 8, 2)) {
+    ESP_LOGW(TAG, "Updating AM2320 failed!");
+    return false;
+  }
+
+  uint16_t checksum;
+
+  checksum = data[7] << 8;
+  checksum += data[6];
+
+  if (crc_16(data, 6) != checksum) {
+    ESP_LOGW(TAG, "AM2320 Checksum invalid!");
+    return false;
+  }
+
+  return true;
+}
 
 }  // namespace am2320
 }  // namespace esphome
