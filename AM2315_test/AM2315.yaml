@@ -7,8 +7,8 @@ logger:
   level: verbose
 
 i2c:
-    sda: D2
-    scl: D1
+    sda: D1
+    scl: D2
     scan: False
 
 sensor:
